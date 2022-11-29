@@ -1,0 +1,15 @@
+C:\repos\WebApi\WebApiTest\bin\Debug\WebApiTest.deps.json
+C:\repos\WebApi\WebApiTest\bin\Debug\WebApiTest.runtimeconfig.json
+C:\repos\WebApi\WebApiTest\bin\Debug\WebApiTest.runtimeconfig.dev.json
+C:\repos\WebApi\WebApiTest\bin\Debug\appsettings.Development.json
+C:\repos\WebApi\WebApiTest\bin\Debug\appsettings.json
+C:\repos\WebApi\WebApiTest\bin\Debug\WebApiTest.exe
+C:\repos\WebApi\WebApiTest\bin\Debug\WebApiTest.dll
+C:\repos\WebApi\WebApiTest\bin\Debug\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\repos\WebApi\WebApiTest\bin\Debug\Swashbuckle.AspNetCore.Swagger.dll
+C:\repos\WebApi\WebApiTest\bin\Debug\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\repos\WebApi\WebApiTest\bin\Debug\Microsoft.OpenApi.dll
+C:\repos\WebApi\WebApiTest\bin\Debug\WebApiTest.pdb
+C:\repos\WebApi\WebApiTest\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
+C:\repos\WebApi\WebApiTest\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+C:\repos\WebApi\WebApiTest\obj\Debug\docker-compose.dcproj.CopyComplete

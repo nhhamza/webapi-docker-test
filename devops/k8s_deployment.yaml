@@ -1,0 +1,28 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-api-test
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: web-api-test
+    spec:
+      containers:
+      - name: web-api-test
+        image: nhhamza/dockerapidemo:latest
+        ports:
+        - containerPort: 80
+        resources:
+         #cpu and memory limit
+          limits:
+            memory: "550Mi"
+            cpu: "500m"
+        env:
+        - name: ASPNETCORE_URLS
+          value: http://*:80
+  selector:
+    matchLabels:
+      app: web-api-test
