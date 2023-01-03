@@ -316,11 +316,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\repos\\WebApi\\WebApiTest\\WebApiTest.csproj",
+      "projectUniqueName": "C:\\repos\\webapi-docker-test\\WebApiTest.csproj",
       "projectName": "WebApiTest",
-      "projectPath": "C:\\repos\\WebApi\\WebApiTest\\WebApiTest.csproj",
+      "projectPath": "C:\\repos\\webapi-docker-test\\WebApiTest.csproj",
       "packagesPath": "C:\\Users\\hamza.lhimer\\.nuget\\packages\\",
-      "outputPath": "C:\\repos\\WebApi\\WebApiTest\\obj\\",
+      "outputPath": "C:\\repos\\webapi-docker-test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hamza.lhimer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -377,7 +377,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -26,3 +26,21 @@ spec:
   selector:
     matchLabels:
       app: web-api-test
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-api-test # name for front end
+  labels:
+    app: web-api-test
+spec:
+  type: ClusterIP # LoadBalancer
+  ports:
+  - port: 8080
+    targetPort: 80
+    protocol: TCP
+    # nodePort: 31002
+  selector:
+    app: web-api-test
+
