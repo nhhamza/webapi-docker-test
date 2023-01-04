@@ -14,4 +14,5 @@ RUN dotnet publish "WebApiTest.csproj" -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+COPY devops/.aspnet/https/aspnetapp.pfx .
 ENTRYPOINT ["dotnet", "WebApiTest.dll"]

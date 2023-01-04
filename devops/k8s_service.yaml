@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: load-web-api-balancer
+  name: web-api-test
   labels:
     app: web-api-test
 spec:

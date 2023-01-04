@@ -15,6 +15,7 @@ spec:
         image: nhhamza/dockerapidemo:latest
         ports:
         - containerPort: 80
+        - containerPort: 443
         resources:
          #cpu and memory limit
           limits:
@@ -22,7 +23,16 @@ spec:
             cpu: "500m"
         env:
         - name: ASPNETCORE_URLS
-          value: http://*:80
+          value: https://+:443;http://+:80     
+        - name: ASPNETCORE_HTTPS_PORT
+          value: '443'          
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Development  
+        - name: ASPNETCORE_Kestrel__Certificates__Default__Password
+          value: password
+        - name: ASPNETCORE_Kestrel__Certificates__Default__Path
+          value: /app/aspnetapp.pfx
+
   selector:
     matchLabels:
       app: web-api-test
@@ -35,10 +45,10 @@ metadata:
   labels:
     app: web-api-test
 spec:
-  type: ClusterIP # LoadBalancer
+  type: LoadBalancer # ClusterIP
   ports:
   - port: 8080
-    targetPort: 80
+    targetPort: 443
     protocol: TCP
     # nodePort: 31002
   selector:
