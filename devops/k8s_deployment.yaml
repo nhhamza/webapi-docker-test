@@ -15,7 +15,6 @@ spec:
         image: nhhamza/dockerapidemo:latest
         ports:
         - containerPort: 80
-        - containerPort: 443
         resources:
          #cpu and memory limit
           limits:
@@ -23,16 +22,7 @@ spec:
             cpu: "500m"
         env:
         - name: ASPNETCORE_URLS
-          value: https://+:443;http://+:80     
-        - name: ASPNETCORE_HTTPS_PORT
-          value: '443'          
-        - name: ASPNETCORE_ENVIRONMENT
-          value: Development  
-        - name: ASPNETCORE_Kestrel__Certificates__Default__Password
-          value: password
-        - name: ASPNETCORE_Kestrel__Certificates__Default__Path
-          value: /app/aspnetapp.pfx
-
+          value: http://*:80
   selector:
     matchLabels:
       app: web-api-test
@@ -45,12 +35,71 @@ metadata:
   labels:
     app: web-api-test
 spec:
-  type: LoadBalancer # ClusterIP
+  type: ClusterIP # LoadBalancer
   ports:
-  - port: 443
-    targetPort: 443
+  - port: 8080
+    targetPort: 80
     protocol: TCP
     # nodePort: 31002
   selector:
     app: web-api-test
+
+
+
+
+# --- for Https with private cert
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: web-api-test
+# spec:
+#   replicas: 1
+#   template:
+#     metadata:
+#       labels:
+#         app: web-api-test
+#     spec:
+#       containers:
+#       - name: web-api-test
+#         image: nhhamza/dockerapidemo:latest
+#         ports:
+#         - containerPort: 80
+#         - containerPort: 443
+#         resources:
+#          #cpu and memory limit
+#           limits:
+#             memory: "550Mi"
+#             cpu: "500m"
+#         env:
+#         - name: ASPNETCORE_URLS
+#           value: https://+:443;http://+:80     
+#         - name: ASPNETCORE_HTTPS_PORT
+#           value: '443'          
+#         - name: ASPNETCORE_ENVIRONMENT
+#           value: Development  
+#         - name: ASPNETCORE_Kestrel__Certificates__Default__Password
+#           value: password
+#         - name: ASPNETCORE_Kestrel__Certificates__Default__Path
+#           value: /app/aspnetapp.pfx
+
+#   selector:
+#     matchLabels:
+#       app: web-api-test
+
+# ---
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: web-api-test # name for front end
+#   labels:
+#     app: web-api-test
+# spec:
+#   type: LoadBalancer # ClusterIP
+#   ports:
+#   - port: 443
+#     targetPort: 443
+#     protocol: TCP
+#     # nodePort: 31002
+#   selector:
+#     app: web-api-test
 
